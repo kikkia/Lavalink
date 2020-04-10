@@ -26,11 +26,10 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import lavalink.server.config.ServerConfig;
+import lavalink.server.util.DislogLogger;
 import lavalink.server.util.Util;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +46,7 @@ import java.util.concurrent.CompletionStage;
 @RestController
 public class AudioLoaderRestHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(AudioLoaderRestHandler.class);
+    private static final DislogLogger log = new DislogLogger(AudioLoaderRestHandler.class);
     private final AudioPlayerManager audioPlayerManager;
     private final ServerConfig serverConfig;
 

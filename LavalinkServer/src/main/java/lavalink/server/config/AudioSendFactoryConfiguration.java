@@ -1,7 +1,6 @@
 package lavalink.server.config;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lavalink.server.util.DislogLogger;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AudioSendFactoryConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(AudioSendFactoryConfiguration.class);
+    private static final DislogLogger log = new DislogLogger(AudioSendFactoryConfiguration.class);
 
     private boolean nasSupported = false;
     private final int audioSendFactoryCount = Runtime.getRuntime().availableProcessors() * 2;

@@ -29,8 +29,8 @@ import io.undertow.websockets.core.WebSocketCallback
 import io.undertow.websockets.core.WebSocketChannel
 import io.undertow.websockets.core.WebSockets
 import io.undertow.websockets.jsr.UndertowSession
+import lavalink.server.util.DislogLogger
 import org.json.JSONObject
-import org.slf4j.LoggerFactory
 import org.springframework.web.socket.WebSocketSession
 import org.springframework.web.socket.adapter.standard.StandardWebSocketSession
 import space.npstr.magma.MagmaFactory
@@ -43,7 +43,6 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
-import java.util.function.Supplier
 
 class SocketContext internal constructor(
         val audioPlayerManager: AudioPlayerManager,
@@ -53,7 +52,7 @@ class SocketContext internal constructor(
 ) {
 
     companion object {
-        private val log = LoggerFactory.getLogger(SocketContext::class.java)
+        private val log = DislogLogger(SocketContext::class.java)
     }
 
     internal val magma: MagmaApi = MagmaFactory.of { socketServer.getAudioSendFactory(it) }

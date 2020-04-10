@@ -1,7 +1,6 @@
 package lavalink.server.info;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lavalink.server.util.DislogLogger;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -16,7 +15,7 @@ import java.util.Properties;
 @Component
 public class AppInfo {
 
-    private static final Logger log = LoggerFactory.getLogger(AppInfo.class);
+    private static final DislogLogger log = new DislogLogger(AppInfo.class);
 
     private final String version;
     private final String groupId;

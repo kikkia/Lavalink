@@ -7,6 +7,7 @@ import io.sentry.Sentry;
 import io.sentry.SentryClient;
 import io.sentry.logback.SentryAppender;
 import lavalink.server.Launcher;
+import lavalink.server.util.DislogLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +23,7 @@ import java.util.Properties;
 @Configuration
 public class SentryConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(SentryConfiguration.class);
+    private static final DislogLogger log = new DislogLogger(SentryConfiguration.class);
     private static final String SENTRY_APPENDER_NAME = "SENTRY";
 
     public SentryConfiguration(ServerConfig serverConfig, SentryConfigProperties sentryConfig) {

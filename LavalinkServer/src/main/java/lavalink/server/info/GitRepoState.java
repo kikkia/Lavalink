@@ -1,5 +1,6 @@
 package lavalink.server.info;
 
+import lavalink.server.util.DislogLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ import java.util.Properties;
 @Component
 public class GitRepoState {
 
-    private static final Logger log = LoggerFactory.getLogger(GitRepoState.class);
+    private static final DislogLogger log = new DislogLogger(GitRepoState.class);
 
     private boolean loaded = false;
     private final String branch;

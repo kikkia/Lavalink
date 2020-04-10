@@ -1,5 +1,6 @@
 package lavalink.server.config;
 
+import lavalink.server.util.DislogLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration
 public class RequestAuthorizationFilter implements HandlerInterceptor, WebMvcConfigurer {
 
-    private static final Logger log = LoggerFactory.getLogger(RequestAuthorizationFilter.class);
+    private static final DislogLogger log = new DislogLogger(RequestAuthorizationFilter.class);
     private ServerConfig serverConfig;
     private MetricsPrometheusConfigProperties metricsConfig;
 

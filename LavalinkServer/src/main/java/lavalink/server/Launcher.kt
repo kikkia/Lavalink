@@ -25,6 +25,7 @@ package lavalink.server
 import com.sedmelluq.discord.lavaplayer.tools.PlayerLibrary
 import lavalink.server.info.AppInfo
 import lavalink.server.info.GitRepoState
+import lavalink.server.util.DislogLogger
 import org.slf4j.LoggerFactory
 import org.springframework.boot.Banner
 import org.springframework.boot.SpringApplication
@@ -42,7 +43,7 @@ class LavalinkApplication
 
 object Launcher {
 
-    private val log = LoggerFactory.getLogger(Launcher::class.java)
+    private val log = DislogLogger(Launcher::class.java)
 
     val startTime = System.currentTimeMillis()
 

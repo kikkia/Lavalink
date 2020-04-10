@@ -26,12 +26,11 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lavalink.server.util.DislogLogger;
 
 public class AudioLossCounter extends AudioEventAdapter {
 
-    private static final Logger log = LoggerFactory.getLogger(AudioLossCounter.class);
+    private static final DislogLogger log = new DislogLogger(AudioLossCounter.class);
 
     public static final int EXPECTED_PACKET_COUNT_PER_MIN = (60 * 1000) / 20; // 20ms packets
     private static final int ACCEPTABLE_TRACK_SWITCH_TIME = 100; //ms

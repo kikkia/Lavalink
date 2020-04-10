@@ -3,6 +3,7 @@ package lavalink.server.metrics;
 import ch.qos.logback.classic.LoggerContext;
 import io.prometheus.client.hotspot.DefaultExports;
 import io.prometheus.client.logback.InstrumentedAppender;
+import lavalink.server.util.DislogLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -19,7 +20,7 @@ import java.lang.management.ManagementFactory;
 @ConditionalOnProperty("metrics.prometheus.enabled")
 public class PrometheusMetrics {
 
-    private static final Logger log = LoggerFactory.getLogger(PrometheusMetrics.class);
+    private static final DislogLogger log = new DislogLogger(PrometheusMetrics.class);
 
     public PrometheusMetrics() {
 

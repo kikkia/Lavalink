@@ -22,16 +22,13 @@
 
 package lavalink.server.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("unused")
 public class ResetableCountDownLatch {
 
-    private static final Logger log = LoggerFactory.getLogger(ResetableCountDownLatch.class);
+    private static final DislogLogger log = new DislogLogger(ResetableCountDownLatch.class);
 
     private final int startCount;
     private CountDownLatch latch;

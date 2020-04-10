@@ -29,16 +29,14 @@ import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
 import lavalink.server.io.SocketServer;
+import lavalink.server.util.DislogLogger;
 import lavalink.server.util.Util;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 
 public class EventEmitter extends AudioEventAdapter {
 
-    private static final Logger log = LoggerFactory.getLogger(EventEmitter.class);
+    private static final DislogLogger log = new DislogLogger(EventEmitter.class);
     private final AudioPlayerManager audioPlayerManager;
     private final Player linkPlayer;
 

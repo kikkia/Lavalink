@@ -22,12 +22,11 @@ import com.sedmelluq.lava.extensions.youtuberotator.planner.RotatingIpRoutePlann
 import com.sedmelluq.lava.extensions.youtuberotator.planner.RotatingNanoIpRoutePlanner
 import com.sedmelluq.lava.extensions.youtuberotator.tools.ip.Ipv4Block
 import com.sedmelluq.lava.extensions.youtuberotator.tools.ip.Ipv6Block
-import org.slf4j.LoggerFactory
+import lavalink.server.util.DislogLogger
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import java.net.InetAddress
 import java.util.function.Predicate
-import java.util.function.Supplier
 
 /**
  * Created by napster on 05.03.18.
@@ -35,7 +34,7 @@ import java.util.function.Supplier
 @Configuration
 class AudioPlayerConfiguration {
 
-    private val log = LoggerFactory.getLogger(AudioPlayerConfiguration::class.java)
+    private val log = DislogLogger(AudioPlayerConfiguration::class.java)
 
     @Bean
     fun audioPlayerManagerSupplier(sources: AudioSourcesConfig, serverConfig: ServerConfig, routePlanner: AbstractRoutePlanner?): AudioPlayerManager {

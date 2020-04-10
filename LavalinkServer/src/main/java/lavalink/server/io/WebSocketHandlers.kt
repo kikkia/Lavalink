@@ -1,5 +1,6 @@
 package lavalink.server.io
 
+import lavalink.server.util.DislogLogger
 import lavalink.server.util.Util
 import org.json.JSONObject
 import org.slf4j.Logger
@@ -11,7 +12,7 @@ import space.npstr.magma.api.MagmaServerUpdate
 class WebSocketHandlers(private val contextMap: Map<String, SocketContext>) {
 
     companion object {
-        private val log: Logger = LoggerFactory.getLogger(WebSocketHandlers::class.java)
+        private val log: DislogLogger = DislogLogger(WebSocketHandlers::class.java)
     }
 
     fun voiceUpdate(session: WebSocketSession, json: JSONObject) {

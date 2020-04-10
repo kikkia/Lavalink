@@ -27,9 +27,7 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import lavalink.server.util.DislogLogger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,7 +37,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AudioLoader implements AudioLoadResultHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(AudioLoader.class);
+    private static final DislogLogger log = new DislogLogger(AudioLoader.class);
     private static final LoadResult NO_MATCHES = new LoadResult(ResultStatus.NO_MATCHES, Collections.emptyList(),
             null, null);
 

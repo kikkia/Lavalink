@@ -25,9 +25,8 @@ package lavalink.server.io;
 import lavalink.server.Launcher;
 import lavalink.server.player.AudioLossCounter;
 import lavalink.server.player.Player;
+import lavalink.server.util.DislogLogger;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OSProcess;
@@ -35,7 +34,7 @@ import oshi.software.os.OperatingSystem;
 
 public class StatsTask implements Runnable {
 
-    private static final Logger log = LoggerFactory.getLogger(StatsTask.class);
+    private static final DislogLogger log = new DislogLogger(StatsTask.class);
 
     private SocketContext context;
     private final SocketServer socketServer;
